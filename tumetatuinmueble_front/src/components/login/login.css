@@ -1,0 +1,28 @@
+#login-container{
+    margin-top: 10%
+
+}
+
+#login-container h2,
+#login-container form {
+    width: 100%
+}
+
+#login-container button {
+    margin-top:20px;
+}
+
+#login-container .form-label {
+    float: left;
+    margin-top:15px;
+}
+
+#login-container button{
+    width: 40%;
+    float: left;
+}
+/* #col{
+    width: 40%;
+    float: right;
+    margin-top:5%;
+} */
