@@ -1,20 +1,35 @@
-import React from 'react'
+import React from 'react';
+import axios from 'axios';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
-import './login.css'
+import './login.css';
+import app from '../app.json';
 
+
+const {APIHOST}= app;
 export default class login extends React.Component {
     constructor(props) {
+        // cambiar el nombre de las variables
+        // Verificar la captura de la información
         super(props);
         this.state = {
-            correo: '',
+            usuario: '',
             pass: '',
         }
 
     }
-
-    iniciarSesion(){
-        alert(`correo: ${this.state.correo} - password: ${this.state.pass}`);
-
+    iniciarSesion () {    //funcion inicio sesión
+        //alert(`usuario: ${this.state.usuario} - password: ${this.state.pass}`);
+        axios.post(`${APIHOST}/usuarios/login`,{
+            usuario: this.state.usuario,  
+            pass: this.state.pass,
+        }
+        )
+        .then((response) => {
+            console.log(response);
+        })
+        .catch((err) => {      
+         console.log(err);
+        });          
     }
     render() {
         return (
@@ -23,7 +38,7 @@ export default class login extends React.Component {
                     <Col>
 
                         <Row>
-                            <h2 >Login</h2>
+                            <h2  >Login</h2>
                         </Row>
                         <Row>
                             <Col
@@ -34,24 +49,24 @@ export default class login extends React.Component {
                             xl={{span:4,offset:4}}>
                                 <Form>
                                     <Form.Group >
-                                        <Form.Label >Correo</Form.Label>
-                                        <Form.Control type="email" onChange={(e)=>
-                                        this.setState({ correo:e.target.value })
+                                        <Form.Label >Correo :</Form.Label>
+                                        <Form.Control type="String" onChange={(e)=>
+                                        this.setState({ usuario:e.target.value })
                                         }
                                         />
-                                        
+                                       
 
 
                                     </Form.Group>
 
                                     <Form.Group >
-                                        <Form.Label >Clave</Form.Label>
+                                        <Form.Label >Clave :</Form.Label>
                                         <Form.Control type="password" 
                                         onChange={(e)=>
                                         this.setState({pass: e.target.value})
                                         }
                                         />
-                                        
+                                       
                                     </Form.Group>
 
                                     <Button

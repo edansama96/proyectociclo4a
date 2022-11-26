@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+/* Container de la página */
+.Cuerpo {
+    max-width: 1550px;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    box-shadow: 0 5px 6px #08a05ca4;
+    padding: 0 15px;
+    box-sizing: border-box;
+    display: grid;
+
+
+
+}
+
+
+.Cuerpo {
+    margin-top: 10%;
+
+}
+
+/*--------- Productos---------- */
+.title {
+    /* Manejar el titulo del producto */
+    font-size: 2.4rem;
+    padding: 10rem 0 0 0;
+    color: #08a05c;
+    text-align: center;
+
+}
+
+.productos {
+    padding: 5rem 1rem;
+    margin: 0 auto;
+     display: -moz-grid;  
+    grid-template-columns: repeat(auto-fit, minma(22rem, 4fr));
+    gap: 3rem 2rem;
+    box-sizing: border-box;
+
+
+}
+
+.producto {
+    display: flex;
+     width: 50%;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 10px 10px 2px rgba(0, 0, 0, .2);
+    border: 6px solid transparent;
+    border-radius: 5px;
+    float: left;
+}
+
+.producto:hover {
+    border: 6px solid #08a05c55;
+}
+
+.producto__img img {
+    width: 310px;
+
+}
+
+.producto__footer {
+    padding: 1rem;
+}
+
+.producto__footer h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #14202c;
+    font-family: Helvetica, sans-serif;
+    display: flex;
+
+}
+
+.producto__footer p {
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.555);
+    text-transform: uppercase;
+    font-size: 18px;
+    display: flex;
+
+}
+
+.producto__footer .price {
+    font-size: 2rem;
+    color: #1a202c;
+}
+
+/* .producto__footer .descrip {
+    text-align: left;
+  } */
+.producto .buttom {
+    width: 100%;
+    height: 45px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem 3rem
+}
+
+.buttom .btn {
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buttom .btn0 {
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buttom .btn0 {
+    background-color: #3033d3;
+    max-width: 250px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 600;
+
+}
+
+.buttom div {
+    background-color: #08a05c;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    margin-left: -2rem;
+    border-radius: 5px;
+
+
+}
+
+.buttom div a {
+    color: white;
+    font-weight: 600;
+
+}
+
+.buttom div a:hover {
+    color: white;
+}

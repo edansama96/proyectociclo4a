@@ -4,12 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var database=require("./config/database");
+var auth= require("./auth/main_auth");
+var cors=require('cors')
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
 var vendedoresRouter= require('./routes/vendedores.router');
 var inmueblesRouter = require('./routes/inmuebles.router');
 var clientesRouter=require('./routes/clientes.router');
+var usuariosRouter=require('./routes/usuarios.router')
 
 var app = express();
 
@@ -19,15 +21,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(cors())
+
 //Mongo connection
 database.mongoConnect();
-//Router
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+ 
+
+
+//Router
+app.use('/usuarios',usuariosRouter);
+app.use(auth);  // Para la autentificación y seguridad
+app.use('/clientes', clientesRouter);
 app.use('/vendedores', vendedoresRouter);
 app.use('/inmuebles', inmueblesRouter);
-app.use('/clientes', clientesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

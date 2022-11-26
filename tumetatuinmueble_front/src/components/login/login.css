@@ -3,13 +3,19 @@
 
 }
 
-#login-container h2,
+
+#login-container h2{
+    margin-left: 405px;
+    width: 100%;
+}
 #login-container form {
-    width: 100%
+    width: 100%;
 }
 
 #login-container button {
     margin-top:20px;
+    margin-left: 90px;
+    
 }
 
 #login-container .form-label {
@@ -21,8 +27,8 @@
     width: 40%;
     float: left;
 }
-/* #col{
+ /* #col{
     width: 40%;
     float: right;
     margin-top:5%;
-} */
+}  */

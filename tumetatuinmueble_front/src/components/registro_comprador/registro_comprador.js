@@ -16,7 +16,8 @@ export default class reg_comprador extends React.Component {
     };
   }
   registroComprador(){
-    alert(`Nombres: ${this.state.nombres_comprador} `);
+    // alert(`Nombres: ${this.state.nombres_comprador} `);
+    alert(`Boton del registro del comprador `);
   }
 
   render() {
@@ -47,18 +48,21 @@ export default class reg_comprador extends React.Component {
                   <Form.Label className="Form-Label" >Apellidos :</Form.Label>
                   <Form.Control onChange={(e)=>
                     this.setState({apellidos_comprador: e.target.value})} />
+                    
                 </Form.Group>
                 {/* Teléfono */}
                 <Form.Group>
                   <Form.Label className="Form-Label" >Teléfono :</Form.Label>
                   <Form.Control onChange={(e)=>
                     this.setState({telefono_comprador: e.target.value})} />
+                   
                 </Form.Group>
                 {/* Correo */}
                 <Form.Group>
                   <Form.Label className="Form-Label">Email :</Form.Label>
                   <Form.Control type="email" onChange={(e)=>
                     this.setState({email_comprador: e.target.value})} />
+                   
                 </Form.Group>
                 {/* Verificacion correo */}
                 <Form.Group>
@@ -67,12 +71,14 @@ export default class reg_comprador extends React.Component {
                   </Form.Label>
                   <Form.Control type="email" onChange={(e)=>
                     this.setState({vrf_email_comprador: e.target.value})} />
+                    
                 </Form.Group>
                 {/* Contraseña */}
                 <Form.Group>
                   <Form.Label className="Form-Label">Contraseña :</Form.Label>
                   <Form.Control type="password" onChange={(e)=>
                     this.setState({contraseña_comprador: e.target.value})} />
+                    
                 </Form.Group>
                 {/* Verificacion contraseña */}
                 <Form.Group>
@@ -81,6 +87,7 @@ export default class reg_comprador extends React.Component {
                   </Form.Label>
                   <Form.Control type="password" onChange={(e)=>
                     this.setState({vrf_contraseña_comprador: e.target.value})} />
+                    
                 </Form.Group>
                 {/* Checkbox */}
                 <Form.Group className="mb-3" controlId="formBasicCheckbox" >
